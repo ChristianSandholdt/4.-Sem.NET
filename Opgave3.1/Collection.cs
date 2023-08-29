@@ -8,10 +8,10 @@ namespace Opgave3._1
 {
     internal class Collection<TKey>
     {
-        private readonly Dictionary<TKey, Medarbejder> 
-            _collection = new Dictionary<TKey, Medarbejder>();
+        private readonly Dictionary<TKey, IharAdresse > 
+            _collection = new Dictionary<TKey, IharAdresse>();
 
-        public void addElement(TKey key, Medarbejder value)
+        public void addElement(TKey key, IharAdresse value)
         {
             if (this._collection.ContainsKey(key))
             {
@@ -20,7 +20,7 @@ namespace Opgave3._1
             _collection.Add(key, value);
         }
 
-        public Medarbejder GetMedarbejder(TKey key)
+        public IharAdresse Get(TKey key)
         {
             if (_collection.ContainsKey(key))
             {

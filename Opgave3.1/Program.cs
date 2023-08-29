@@ -52,7 +52,11 @@ medarbejderCollection.addElement(m1.Cpr, m1); //Adds Salah again
 Console.WriteLine(medarbejderCollection.size()); // 3
 
 //Tager medarbejderen med m2.Cpr og returnerer dens toString().
-Console.WriteLine(medarbejderCollection.GetMedarbejder(m2.Cpr));
+Console.WriteLine(medarbejderCollection.Get(m2.Cpr));
 
 Console.WriteLine();
 
+Console.WriteLine("Test med Firma og Medarbejdere");
+var firmaMedarbejderCol = new Collection<Adresse>();
+firmaMedarbejderCol.addElement(f1.Adresse, f1);
+firmaMedarbejderCol.addElement(f2.Adresse, f2);
