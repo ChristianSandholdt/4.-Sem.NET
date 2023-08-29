@@ -15,6 +15,13 @@ Medarbejder m3 = new Vaerkfoerer(cpr3,"Darwin", "Træningsbanen", 2011, 250, 202
 Medarbejder m4 = new Vaerkfoerer(cpr4, "Trent", "Højre back", 2010, 270, 2020, 6000);
 Medarbejder m5 = new Synsmand(cpr5,"Jürgen", "Kontoret", 2000, 400, 15);
 
+Adresse a1 = new Adresse("Edwin Rahrs vej",10);
+Adresse a2 = new Adresse("BazarVestVej", 1);
+
+Firma f1 = new Firma("DSV", a1);
+Firma f2 = new Firma("Hos Bilal", a2);
+
+
 vaerkstedet.Add(m1);
 vaerkstedet.Add(m2);
 vaerkstedet.Add(m3);
