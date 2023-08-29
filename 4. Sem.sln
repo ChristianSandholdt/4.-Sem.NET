@@ -5,11 +5,13 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lektion1", "Lektion1", "{A05D0FBE-1D92-41EA-8369-7350290C11CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave3+4", "Opgave3+4\Opgave3+4.csproj", "{9FA0F6DC-3018-413F-9E00-6F5AB987C7F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Opgave3+4", "Opgave3+4\Opgave3+4.csproj", "{9FA0F6DC-3018-413F-9E00-6F5AB987C7F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave5", "Opgave5+6\Opgave5.csproj", "{389EB1F8-9BD0-46C8-8380-489704A5DD94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Opgave5", "Opgave5+6\Opgave5.csproj", "{389EB1F8-9BD0-46C8-8380-489704A5DD94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opgave6", "Opgave6\Opgave6.csproj", "{947C0650-EE2A-4AEC-923C-FB18A06EF832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Opgave6", "Opgave6\Opgave6.csproj", "{947C0650-EE2A-4AEC-923C-FB18A06EF832}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lektion2", "Lektion2", "{DBD2DAD6-4E84-4873-B1DF-F2F7AC630291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
