@@ -18,7 +18,7 @@ namespace Opgave3._1
 
         public override string ToString()
         {
-            return "Firmanavn: " + this.Navn + ", Adresse: " + this.Adresse;
+            return "Firmanavn: " + Navn + ", Adresse: " + Adresse;
         }
     }
 }

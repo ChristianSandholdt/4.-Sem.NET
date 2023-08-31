@@ -11,7 +11,7 @@ namespace Opgave3._1
         public int SvendeProeveAar { get; set; }
         public int TimeLoen { get; set; }
 
-        public Mekaniker(CprNr cprnr,String navn, String adresse, int svendeProeveAar, int timeLoen) : base(cprnr, navn, adresse) {
+        public Mekaniker(CprNr cprnr,String navn, Adresse adresse, int svendeProeveAar, int timeLoen) : base(cprnr, navn, adresse) {
             this.SvendeProeveAar = svendeProeveAar;
             this.TimeLoen = timeLoen;
         }

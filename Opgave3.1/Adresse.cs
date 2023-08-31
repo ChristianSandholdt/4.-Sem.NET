@@ -15,5 +15,9 @@ namespace Opgave3._1
             this.VejNavn = vejNavn;
             this.HusNummer = husNummer;
         }
+
+        public override String ToString() {
+            return VejNavn + " " + HusNummer;
+        }
     }
 }

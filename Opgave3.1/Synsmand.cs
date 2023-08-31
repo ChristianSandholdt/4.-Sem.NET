@@ -11,7 +11,7 @@ namespace Opgave3._1
         public int AntalUgentligeSyn { get; set; }
         public int UgeLoen { get; }
 
-        public Synsmand(CprNr cprNr, String navn, String adresse, int svendeProeveAar, int timeLoen,int antalUgentligeSyn) :base(cprNr,navn, adresse, svendeProeveAar, timeLoen) {
+        public Synsmand(CprNr cprNr, String navn, Adresse adresse, int svendeProeveAar, int timeLoen,int antalUgentligeSyn) :base(cprNr,navn, adresse, svendeProeveAar, timeLoen) {
             this.AntalUgentligeSyn = antalUgentligeSyn;
             this.UgeLoen = 290 * AntalUgentligeSyn;
         }

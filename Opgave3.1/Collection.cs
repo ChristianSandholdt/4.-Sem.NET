@@ -34,6 +34,15 @@ namespace Opgave3._1
             return _collection.Count; 
         }
 
+        public void Print()
+        {
+            foreach (KeyValuePair<TKey, IharAdresse> kvp in _collection)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
+        }
+
+
 
     }
 }
