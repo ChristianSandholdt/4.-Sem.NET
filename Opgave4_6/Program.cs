@@ -29,6 +29,14 @@ list.Sort(new ByWeightSorter());
 Console.WriteLine("Sorted by weight");
 printList(list);
 
+foreach (Person p in list)
+{
+    p.printPersonName(formatPersonNameToUpperCase);
+}
+String formatPersonNameToUpperCase(String name)
+{
+    return name.ToUpper();
+}
 
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,5 +34,13 @@ namespace Opgave4_6
                 Console.WriteLine(p.ToString());
             }
         }
+
+
+        public void printPersonName (FormatPerson formatPerson)
+        {
+            Console.WriteLine(formatPerson(Name));
+        }
+        public delegate string FormatPerson(String name);
+
     }
 }
