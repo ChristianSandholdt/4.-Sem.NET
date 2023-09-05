@@ -1,10 +1,13 @@
 ﻿using Opgave5_3;
+using System.Collections.Generic;
+
 List<Person> people1 = new List<Person>();
 void Exercise1()
 {
     try
     {
-        people1 = Person.ReadCSVFile("C:\\Users\\45416\\source\\repos\\4. Sem\\Opgave5_3\\data1.csv");
+        //people1 = Person.ReadCSVFile("C:\\Users\\45416\\source\\repos\\4. Sem\\Opgave5_3\\data1.csv"); //laptop
+        people1 = Person.ReadCSVFile("C:\\Users\\cks24\\source\\repos\\4.-Sem.NET\\Opgave5_3\\data1.csv"); //stationær
     }
     catch (Exception ex)
     {
@@ -84,20 +87,65 @@ Exercise1();
 //}
 
 //5.8
-int[] numbers = { 34, 8, 56, 31, 79, 150, 88, 7, 200, 47, 88, 20 };
-IEnumerable<int> intsAscending = numbers.Where(numbers => numbers.ToString().Length == 2);
-intsAscending.OrderBy(i => i).ToList().ForEach(Console.WriteLine);
+//int[] numbers = { 34, 8, 56, 31, 79, 150, 88, 7, 200, 47, 88, 20 };
+//IEnumerable<int> intsAscending = numbers.Where(numbers => numbers.ToString().Length == 2);
+//intsAscending.OrderBy(i => i).ToList().ForEach(Console.WriteLine);
 
-Console.WriteLine("/////////");
+//Console.WriteLine("/////////");
 
-IEnumerable<int> intsDescending = numbers.Where(numbers => numbers.ToString().Length == 2);
-intsDescending.OrderByDescending(i => i).ToList().ForEach(Console.WriteLine);
+//IEnumerable<int> intsDescending = numbers.Where(numbers => numbers.ToString().Length == 2);
+//intsDescending.OrderByDescending(i => i).ToList().ForEach(Console.WriteLine);
 
-IEnumerable<String> evenOrOdd = numbers
-    .Where(i => i.ToString().Length == 2)
-    .OrderBy(i => i)
-    .Select(i => i % 2 == 0 ? i + " even" : i + " uneven");
-foreach(String s in evenOrOdd)
+//IEnumerable<String> evenOrOdd = numbers
+//    .Where(i => i.ToString().Length == 2)
+//    .OrderBy(i => i)
+//    .Select(i => i % 2 == 0 ? i + " even" : i + " uneven");
+//foreach(String s in evenOrOdd)
+//{
+//    Console.WriteLine(s);
+//}
+
+//5.10
+Console.WriteLine("List with random ints");
+Console.WriteLine();
+Random random = new Random();
+List<int> randomInts = new List<int>();
+for (int i = 0; i < 100; i++)
 {
-    Console.WriteLine(s);
+    randomInts.Add(random.Next(1, 50));
 }
+Console.WriteLine("Amount of unevens in list");
+int amountOfUneven = randomInts.Where(x => x % 2 == 1).Count();
+Console.WriteLine(amountOfUneven);
+
+
+Console.WriteLine("Amount of distinct in list");
+int distinct = randomInts.Distinct().Count();
+Console.WriteLine(distinct);
+
+IEnumerable<int> list = randomInts.Where(i => i % 2 != 0).Take(3);
+Console.WriteLine("Show first three unevens");
+foreach (int i in list)
+{
+    Console.WriteLine(i);
+}
+
+IEnumerable<int> list1 = randomInts.Distinct().Where(i => i % 2 != 0);
+Console.WriteLine("Show distinct uneven numbers in list");
+foreach (int i in list1)
+{
+    Console.WriteLine(i);
+}
+
+//5.11
+var groupByInitial = from person in people1 group person by person.Name[0];
+foreach (var personGroup in groupByInitial)
+{
+    Console.WriteLine($"Key: {personGroup.Key}");
+    foreach (var person in personGroup)
+    {
+        Console.WriteLine(person.Name);
+    }        
+}
+
+

@@ -11,5 +11,10 @@ namespace Opgave5_3
         {
             persons.FindAll(cond).ForEach(p => p.Accepted = true);
         }
+        public static void Reset(this List<Person> persons, Predicate<Person> cond)
+        {
+            persons.FindAll(cond).ForEach(p => p.Accepted = false);
+        }
+
     }
 }
