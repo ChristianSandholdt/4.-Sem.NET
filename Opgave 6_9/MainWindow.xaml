@@ -1,0 +1,22 @@
+﻿<Window x:Class="Opgave_6_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opgave_6_9"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="leftAddButton" Content="Add" HorizontalAlignment="Left" Height="28" Margin="75,113,0,0" VerticalAlignment="Top" Width="65" Click="leftAddButton_Click"/>
+        <Button x:Name="rightAddButton" Content="Add" HorizontalAlignment="Left" Height="28" Margin="541,113,0,0" VerticalAlignment="Top" Width="65" Click="rightAddButton_Click"/>
+        <ListBox x:Name="leftListBox" SelectionMode="Multiple" HorizontalAlignment="Left" Height="182" Margin="75,156,0,0" VerticalAlignment="Top" Width="207" d:ItemsSource="{d:SampleData ItemCount=5}" />
+        <ListBox x:Name="rightListBox" SelectionMode="Multiple" HorizontalAlignment="Left" Height="182" Margin="541,156,0,0" VerticalAlignment="Top" Width="207" d:ItemsSource="{d:SampleData ItemCount=5}" />
+        <Button x:Name="leftToRightArrow" Content="==&gt;" HorizontalAlignment="Left" Height="36" Margin="372,181,0,0" VerticalAlignment="Top" Width="94" Click="leftToRightArrow_Click"/>
+        <Button x:Name="rightToLeftArrow" Content="&lt;==" HorizontalAlignment="Left" Height="36" Margin="372,273,0,0" VerticalAlignment="Top" Width="94" Click="rightToLeftArrow_Click"/>
+        <Button x:Name="leftClear" Content="Clear" HorizontalAlignment="Left" Height="36" Margin="75,354,0,0" VerticalAlignment="Top" Width="76" Click="leftClear_Click"/>
+        <Button x:Name="rightClear" Content="Clear" HorizontalAlignment="Left" Height="36" Margin="541,354,0,0" VerticalAlignment="Top" Width="76" Click="rightClear_Click"/>
+        <TextBox x:Name="leftTextbox" HorizontalAlignment="Left" Margin="75,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Height="38"/>
+        <TextBox x:Name="rightTextBox" HorizontalAlignment="Left" Margin="541,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Height="38"/>
+
+    </Grid>
+</Window>

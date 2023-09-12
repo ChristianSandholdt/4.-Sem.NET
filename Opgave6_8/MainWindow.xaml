@@ -1,0 +1,26 @@
+﻿<Window x:Class="Opgave6_8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opgave6_8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="42,55,674,270">
+            <RadioButton Name="north" Content="North" Checked="north_Checked"/>
+            <RadioButton Name="east" Content="East" Checked="east_Checked"/>
+            <RadioButton Name="south" Content="South" Checked="south_Checked"/>
+            <RadioButton Name="west" Content="West" Checked="west_Checked"/>
+        </StackPanel>
+        <StackPanel Margin="131,55,589,290">
+            <CheckBox Name="lemon" Content="Lemon" Checked="lemon_Checked" Unchecked="lemon_Unchecked"/>
+            <CheckBox Name="orange" Content="Orange" Checked="orange_Checked" Unchecked="orange_Unchecked"/>
+            <CheckBox Name="banana" Content="Banana" Checked="banana_Checked" Unchecked="banana_Unchecked"/>
+        </StackPanel>
+        <Label x:Name="rdbLabels" Content="Status radiobuttons" HorizontalAlignment="Left" Margin="17,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="cBox" Content="Status Checkboxes" HorizontalAlignment="Left" Margin="139,0,0,0" VerticalAlignment="Center"/>
+        <Label x:Name="rdbResult" Content="" HorizontalAlignment="Left" Margin="17,250,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="cBoxResult" Content="" HorizontalAlignment="Left" Margin="139,250,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
