@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,7 +28,7 @@ namespace Opgave1
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            btn2.Content = "You clicked the button";
+            btn2.Content = "Clicked";
         }
 
         private void cBox_Checked_1(object sender, RoutedEventArgs e)

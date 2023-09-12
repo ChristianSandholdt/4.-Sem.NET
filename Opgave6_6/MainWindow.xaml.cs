@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Opgave2
+namespace Opgave6_6
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,18 +25,24 @@ namespace Opgave2
             InitializeComponent();
         }
 
-        private void topButton_Click(object sender, RoutedEventArgs e)
+        private void nordKnap_Click(object sender, RoutedEventArgs e)
         {
-            var temp = lbl1.Content.ToString();
-            lbl1.Content = lbl2.Content.ToString();
-            lbl2.Content = temp;
+            textbox.Text += nordKnap.Content.ToString() + "\n";
         }
 
-        private void BottomButton_Click(object sender, RoutedEventArgs e)
+        private void østKnap_Click(object sender, RoutedEventArgs e)
         {
-            var temp = lbl3.Content.ToString();
-            lbl3.Content = lbl4.Content.ToString();
-            lbl4.Content = temp;
+            textbox.Text += østKnap.Content.ToString() + "\n";
+        }
+
+        private void vestKnap_Click(object sender, RoutedEventArgs e)
+        {
+            textbox.Text += vestKnap.Content.ToString() + "\n";
+        }
+
+        private void sydKnap_Click(object sender, RoutedEventArgs e)
+        {
+            textbox.Text += sydKnap.Content.ToString() + "\n";
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Opgave2
+namespace Opgave6_7
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,18 +25,24 @@ namespace Opgave2
             InitializeComponent();
         }
 
-        private void topButton_Click(object sender, RoutedEventArgs e)
+        private void Open_Click(object sender, RoutedEventArgs e)
         {
-            var temp = lbl1.Content.ToString();
-            lbl1.Content = lbl2.Content.ToString();
-            lbl2.Content = temp;
+            statusbar.Text = "Status: Open";
         }
 
-        private void BottomButton_Click(object sender, RoutedEventArgs e)
+        private void Save_as_Click(object sender, RoutedEventArgs e)
         {
-            var temp = lbl3.Content.ToString();
-            lbl3.Content = lbl4.Content.ToString();
-            lbl4.Content = temp;
+            statusbar.Text = "Status: Save as";
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            statusbar.Text = "Status: Exit";
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            statusbar.Text = "Status: About";
         }
     }
 }
