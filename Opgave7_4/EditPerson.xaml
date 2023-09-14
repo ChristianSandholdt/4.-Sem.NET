@@ -1,0 +1,28 @@
+﻿<Window x:Class="Opgave7_4.EditPerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Opgave7_4"
+        mc:Ignorable="d"
+        Title="EditPerson" Height="450" Width="293">
+    <Grid Margin="0,0,0,-16" Name="editGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblNavn" Content="Navn" HorizontalAlignment="Left" Height="32" Margin="30,37,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblAccepted" Content="Accepted" HorizontalAlignment="Left" Height="32" Margin="30,165,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblScore" Content="Score" HorizontalAlignment="Left" Height="32" Margin="30,133,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblVægt" Content="Vægt" HorizontalAlignment="Left" Height="32" Margin="30,101,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="lblAlder" Content="Alder" HorizontalAlignment="Left" Height="32" Margin="30,69,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Center" Height="52" Margin="0,225,0,0" VerticalAlignment="Top" Width="162" Click="Button_Click"/>
+        <TextBox x:Name="tbScore" HorizontalAlignment="Left" Height="32" Margin="131,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="tbVægt" HorizontalAlignment="Left" Height="32" Margin="131,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="tbAlder" HorizontalAlignment="Left" Height="32" Margin="131,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="tbNavn" HorizontalAlignment="Left" Height="32" Margin="131,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <CheckBox x:Name="cbAccepted" Content="CheckBox" HorizontalAlignment="Left" Height="32" Margin="131,165,0,0" VerticalAlignment="Top" Width="76" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+
+    </Grid>
+</Window>
