@@ -24,6 +24,7 @@
         <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Height="54" Margin="300,248,0,0" VerticalAlignment="Top" Width="100" Click="btnEdit_Click"/>
         <Button x:Name="btnPrintPerson" Content="Print" HorizontalAlignment="Left" Height="58" Margin="300,331,0,0" VerticalAlignment="Top" Width="100"/>
         <CheckBox x:Name="cbAccepted" Content="CheckBox" HorizontalAlignment="Left" Margin="441,198,0,0" VerticalAlignment="Top" Checked="cbAccepted_Checked" Unchecked="cbAccepted_Unchecked"/>
+        <Button x:Name="btnAddPerson" Content="Add person" HorizontalAlignment="Left" Height="141" Margin="441,248,0,0" VerticalAlignment="Top" Width="125" Click="Button_Click"/>
 
     </Grid>
 </Window>

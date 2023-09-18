@@ -71,6 +71,8 @@ namespace Opgave7_4
             cbAccepted.IsChecked = p.Accepted;
         }
 
+
+
         private void cbAccepted_Unchecked(object sender, RoutedEventArgs e)
         {
             var p = lbPersons.SelectedItem as Person;
@@ -81,6 +83,12 @@ namespace Opgave7_4
         {
             var p = lbPersons.SelectedItem as Person;
             p.Accepted = true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var add = new AddPerson((ListBox) lbPersons);
+            add.Show();
         }
     }
 }

@@ -19,13 +19,11 @@ namespace Opgave7_4
     /// </summary>
     public partial class EditPerson : Window
     {
-        private Person person;
-        private MainWindow mainWindow;
-
+        Person person;
         public EditPerson(Person p)
         {
             InitializeComponent();
-            person = p;
+            Person person = p;
             tbNavn.Text = person.Name;
             tbAlder.Text = person.Age.ToString();
             tbVægt.Text = person.Weight.ToString();
