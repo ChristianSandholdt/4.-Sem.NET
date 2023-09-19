@@ -7,9 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lbCarView" HorizontalAlignment="Left" Height="259" Margin="32,44,0,0" VerticalAlignment="Top" Width="263" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button x:Name="btnAddCar" Content="Tilføj bil" HorizontalAlignment="Center" Height="55" Margin="0,44,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click"/>
-        <ComboBox x:Name="cBoxEjere" Margin="532,44,90,335" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ListBox x:Name="lbCarView" HorizontalAlignment="Left" Height="141" Margin="10,10,0,0" VerticalAlignment="Top" Width="288" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lbCarView_SelectionChanged"/>
+        <Button x:Name="btnAddCar" Content="Tilføj bil" HorizontalAlignment="Left" Height="55" Margin="303,12,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click"/>
+        <ComboBox x:Name="cBoxEjere" Margin="303,80,331,298" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="109,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Color" Height="31" Margin="10,179,731,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxColor" HorizontalAlignment="Left" Height="31" Margin="109,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Color" Height="31" Margin="10,179,705,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxEjerID" HorizontalAlignment="Left" Height="31" Margin="109,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Label Content="OwnerID" Height="31" Margin="10,282,705,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tBoxManufacturer" HorizontalAlignment="Left" Height="31" Margin="109,246,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Manufacturer" Height="31" Margin="10,244,705,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,1.345"/>
+        <TextBox x:Name="tBoxPlate" HorizontalAlignment="Left" Height="31" Margin="109,210,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Plate" Height="31" Margin="10,210,705,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSave" Content="Button" HorizontalAlignment="Left" Height="38" Margin="264,275,0,0" VerticalAlignment="Top" Width="122" Click="btnSave_Click"/>
 
     </Grid>
 </Window>

@@ -44,7 +44,9 @@ namespace Lektion8
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bil b = new Bil("Red", "FZ95378", "VW", 1);
+            Ejer e1 = (Ejer)cBoxEjere.SelectedItem as Ejer;
+
+            Bil b = new Bil("Red", "FZ95378", "VW", e1.EjerID);
             context.Biler.Add(b);
             context.SaveChanges();
             lbCarView.Items.Add(b);
@@ -58,6 +60,34 @@ namespace Lektion8
             {
                 lbCarView.Items.Add(b);
             }
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Bil b = (Bil)lbCarView.SelectedItem as Bil;
+            b.Color = tBoxColor.Text;
+            b.EjerID = Int32.Parse(tBoxEjerID.Text);
+            b.Manufacturer = tBoxManufacturer.Text;
+            b.Plate = tBoxPlate.Text;
+            context.SaveChanges();
+            lbCarView.Items.Refresh();
+
+        }
+
+        private void lbCarView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Bil? b = (Bil)lbCarView.SelectedItem as Bil;
+            if (b != null)
+            {
+            tBoxColor.Text = b.Color.ToString();
+            tBoxEjerID.Text = b.EjerID.ToString();
+            tBoxManufacturer.Text = b.Manufacturer.ToString();
+            tBoxPlate.Text = b.Plate.ToString();
+            
+            }
+
+
+
         }
     }
 }

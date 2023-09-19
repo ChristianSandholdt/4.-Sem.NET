@@ -10,27 +10,25 @@ namespace Lektion8.Context
 {
     class BilContext : DbContext
     {
-        public Ejer e = new Ejer("Martin");
         public BilContext()
         {
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer("Data Source=DESKTOP-LFEACLO; Initial Catalog=Bil; Integrated Security=SSPI; TrustServerCertificate=true"); // stationær
-            optionsBuilder.UseSqlServer("Data Source=Christian\\SQLEXPRESS; Initial Catalog=Bil; Integrated Security=SSPI; TrustServerCertificate=true"); // bærbar
+            //optionsBuilder.UseSqlServer("Data Source=Christian\\SQLEXPRESS; Initial Catalog=Bil; Integrated Security=SSPI; TrustServerCertificate=true"); // bærbar
+            optionsBuilder.UseSqlServer("Data Source=CKSA-PC01\\SQLEXPRESS; Initial Catalog=Bil; Integrated Security=SSPI; TrustServerCertificate=true"); //Arbejdsbærbar
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            Ejer ejer1 = new Ejer { EjerID = -1, Name = "Martin" };
+            Ejer ejer2 = new Ejer { EjerID = -2, Name = "Nehtin" };
 
-            modelBuilder.Entity<Ejer>().HasData(new Ejer[]
-{
-                new Ejer {EjerID = -1, Name = "Martin"}
+            Bil bil1 = new Bil { EjerID = -1, BilID = -1 , Color = "Red", Manufacturer = "Volvo", Plate = "BZ42056"};
+            Bil bil2 = new Bil { EjerID = -2, BilID = -2, Color = "Green", Manufacturer = "Audi", Plate = "FG64254" };
 
-});
-            modelBuilder.Entity<Bil>().HasData(new Bil[]
-            {
-                new Bil {BilID = -1, Color = "Red", Manufacturer = "Ford", Plate = "DB12122", EjerID = 1}
-            });
+            modelBuilder.Entity<Ejer>().HasData(ejer1, ejer2);
+            modelBuilder.Entity<Bil>().HasData(bil1, bil2);
 
         }
 
