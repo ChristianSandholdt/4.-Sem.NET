@@ -1,4 +1,5 @@
 ﻿using Lektion8.Context;
+using Opgave8_1.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,13 +35,29 @@ namespace Lektion8
             {
                 lbCarView.Items.Add(bil);
             }
+            foreach(Ejer e in context.Ejere)
+            {
+                cBoxEjere.Items.Add(e);
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bil b = new Bil("Red", "FZ95378", "VW");
+            Bil b = new Bil("Red", "FZ95378", "VW", 1);
+            context.Biler.Add(b);
             context.SaveChanges();
             lbCarView.Items.Add(b);
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Ejer ejer = (Ejer)cBoxEjere.SelectedItem as Ejer;
+            lbCarView.Items.Clear();
+            foreach(Bil b in ejer.biler)
+            {
+                lbCarView.Items.Add(b);
+            }
         }
     }
 }

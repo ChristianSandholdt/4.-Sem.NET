@@ -8,7 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ListBox x:Name="lbCarView" HorizontalAlignment="Left" Height="259" Margin="32,44,0,0" VerticalAlignment="Top" Width="263" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button x:Name="btnAddCar" Content="Button" HorizontalAlignment="Left" Height="100" Margin="363,44,0,0" VerticalAlignment="Top" Width="223" Click="Button_Click"/>
+        <Button x:Name="btnAddCar" Content="Tilføj bil" HorizontalAlignment="Center" Height="55" Margin="0,44,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click"/>
+        <ComboBox x:Name="cBoxEjere" Margin="532,44,90,335" SelectionChanged="ComboBox_SelectionChanged"/>
 
     </Grid>
 </Window>

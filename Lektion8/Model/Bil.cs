@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Opgave8_1.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,23 +10,27 @@ using System.Threading.Tasks;
 namespace Lektion8
 {
     [Table("biler")]
-    class Bil
+    public class Bil
     {
         public int BilID { get; set; }
         public string Color { get; set; }
         public string Plate { get; set; }
-
         public string Manufacturer { get; set; }
-
         public int Age { get; set; }
 
-        internal Bil(int bilID, string color, string plate, string manufacturer)
+        public virtual Ejer? Ejer { get; set; }
+
+        public int EjerID { get; set; }
+
+
+        internal Bil(int bilID, string color, string plate, string manufacturer,int ejerID)
         {
             BilID = bilID;
             Color = color;
             Plate = plate;
             Manufacturer = manufacturer;
             Age = 15;
+            EjerID = ejerID;
         }
 
         public Bil()
