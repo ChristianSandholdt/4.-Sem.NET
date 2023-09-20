@@ -23,9 +23,8 @@ namespace Lektion8
         public int EjerID { get; set; }
 
 
-        internal Bil(int bilID, string color, string plate, string manufacturer,int ejerID)
+        internal Bil(string color, string plate, string manufacturer,int ejerID)
         {
-            BilID = bilID;
             Color = color;
             Plate = plate;
             Manufacturer = manufacturer;
