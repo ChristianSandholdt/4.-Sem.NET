@@ -44,7 +44,7 @@ namespace Lektion8
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bil b = new Bil("Red", "FZ95378", "VW", 1);
+            Bil b = new Bil("Red", "FZ95378", "VW");
             context.Biler.Add(b);
             context.SaveChanges();
             lbCarView.Items.Add(b);

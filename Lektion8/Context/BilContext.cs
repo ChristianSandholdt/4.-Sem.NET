@@ -29,7 +29,7 @@ namespace Lektion8.Context
 });
             modelBuilder.Entity<Bil>().HasData(new Bil[]
             {
-                new Bil {BilID = -1, Color = "Red", Manufacturer = "Ford", Plate = "DB12122", EjerID = 1}
+                new Bil {BilID = -1, Color = "Red", Manufacturer = "Ford", Plate = "DB12122", EjerID = e.EjerID}
             });
 
         }
