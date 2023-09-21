@@ -56,9 +56,14 @@ namespace Lektion8
         {
             Ejer ejer = (Ejer)cBoxEjere.SelectedItem as Ejer;
             lbCarView.Items.Clear();
+            lbEjedeHuse.Items.Clear();
             foreach(Bil b in ejer.biler)
             {
                 lbCarView.Items.Add(b);
+            }
+            foreach(Hus h in ejer.Huse)
+            {
+                lbEjedeHuse.Items.Add(h);
             }
         }
 
@@ -71,7 +76,6 @@ namespace Lektion8
             b.Plate = tBoxPlate.Text;
             context.SaveChanges();
             lbCarView.Items.Refresh();
-
         }
 
         private void lbCarView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,7 +87,6 @@ namespace Lektion8
             tBoxEjerID.Text = b.EjerID.ToString();
             tBoxManufacturer.Text = b.Manufacturer.ToString();
             tBoxPlate.Text = b.Plate.ToString();
-            
             }
 
 
