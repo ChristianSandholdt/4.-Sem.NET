@@ -14,6 +14,8 @@ namespace Opgave8_1.Model
         public int EjerID { get; set; }
         public string Name { get; set; }
         public virtual List<Bil> biler { get; } = new List<Bil>();
+
+        public virtual List<Hus> Huse { get; } = new List<Hus>();
         public Ejer(string name): this()
         {
             Name = name;
@@ -21,6 +23,7 @@ namespace Opgave8_1.Model
         public Ejer()
         {
             biler = new List<Bil>();
+            Huse = new List<Hus>();
         }
 
         public override string ToString()

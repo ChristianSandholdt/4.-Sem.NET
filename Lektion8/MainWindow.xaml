@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="lbCarView" HorizontalAlignment="Left" Height="141" Margin="10,10,0,0" VerticalAlignment="Top" Width="288" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lbCarView_SelectionChanged"/>
+        <ListBox x:Name="lbCarView" HorizontalAlignment="Left" Height="141" Margin="10,33,0,0" VerticalAlignment="Top" Width="288" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lbCarView_SelectionChanged"/>
         <Button x:Name="btnAddCar" Content="Tilføj bil" HorizontalAlignment="Left" Height="55" Margin="303,12,0,0" VerticalAlignment="Top" Width="166" Click="Button_Click"/>
         <ComboBox x:Name="cBoxEjere" Margin="303,80,331,298" SelectionChanged="ComboBox_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Height="31" Margin="109,179,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
@@ -20,7 +20,12 @@
         <Label Content="Manufacturer" Height="31" Margin="10,244,705,0" VerticalAlignment="Top" RenderTransformOrigin="0.486,1.345"/>
         <TextBox x:Name="tBoxPlate" HorizontalAlignment="Left" Height="31" Margin="109,210,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="90"/>
         <Label Content="Plate" Height="31" Margin="10,210,705,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnSave" Content="Button" HorizontalAlignment="Left" Height="38" Margin="264,275,0,0" VerticalAlignment="Top" Width="122" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Gem&#xD;&#xA;" HorizontalAlignment="Left" Height="38" Margin="77,338,0,0" VerticalAlignment="Top" Width="122" Click="btnSave_Click"/>
+        <ListBox x:Name="lbEjedeHuse" HorizontalAlignment="Center" Height="83" Margin="0,192,0,0" VerticalAlignment="Top" Width="162" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label x:Name="lblBiler" Content="Biler ejet" HorizontalAlignment="Left" Height="23" Margin="30,5,0,0" VerticalAlignment="Top" Width="108"/>
+        <Label x:Name="lblHuseEjet" Content="Huse ejet" HorizontalAlignment="Left" Height="31" Margin="325,156,0,0" VerticalAlignment="Top" Width="122"/>
+        <ListBox x:Name="lbEjerePaaAdressen" HorizontalAlignment="Left" Height="83" Margin="556,192,0,0" VerticalAlignment="Top" Width="176" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Label x:Name="lblAlleEjere" Content="Alle ejere på adressen" HorizontalAlignment="Left" Height="23" Margin="560,161,0,0" VerticalAlignment="Top" Width="147"/>
 
     </Grid>
 </Window>
