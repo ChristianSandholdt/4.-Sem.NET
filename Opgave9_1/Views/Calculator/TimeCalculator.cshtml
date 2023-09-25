@@ -1,0 +1,14 @@
+﻿@using (Html.BeginForm())
+{
+    <p>
+        @Html.Label("Hours")
+        @Html.TextBox("Hours") <br />
+        @Html.Label("Minutes")
+        @Html.TextBox("Minutes") <br />
+        @Html.Label("Seconds")
+        @Html.TextBox("Seconds") <br />
+    </p>
+    <p>
+        <input type="submit" value="Calculate time">
+    </p>
+}

@@ -1,0 +1,18 @@
+﻿<h1>Simple Calculator</h1>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("number1") <br />
+        @Html.TextBox("number2") <br />
+        <input type="submit" value="+" name="operator">
+        <input type="submit" value="-" name="operator">
+        <input type="submit" value="/" name="operator">
+        <input type="submit" value="*" name="operator">
+    </p>
+    @Html.Label("Result")
+    @Html.TextBox("Result", (String)ViewBag.result)
+
+
+
+
+}
