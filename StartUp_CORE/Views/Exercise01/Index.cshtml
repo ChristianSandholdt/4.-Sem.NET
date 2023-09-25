@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Glass.Name</h2>
+<p>Price: @String.Format("{0:0.00}", ViewBag.Glass.Price)</p>
+<p><img src="\images\@ViewBag.Glass.ImageUrl" alt="@ViewBag.Glass.Name" /></p>
