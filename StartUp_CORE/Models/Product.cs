@@ -9,7 +9,7 @@ public class Product
     public string Name // property
     {
         get { return name; }
-        set { name = value; }
+        private set { name = value; }
     }
 
     private double price; // field
@@ -36,6 +36,13 @@ public class Product
         set { imageUrl = value; }
     }
 
+    private string manufacturer; // field
+    public string Manufacturer // property
+    {
+        get { return manufacturer;}
+        set { manufacturer = value; }
+    }
+
     // constructor 1
     public Product(string name, double price)
     {
@@ -44,10 +51,11 @@ public class Product
     }
 
     // constructor 2
-    public Product(string name, double price, string imageUrl)
+    public Product(string name, double price, string imageUrl, string manufacturer)
     {
-        this.name = name;
-        this.price = price;
-        this.imageUrl = imageUrl;
+        Name = name;
+        Price = price;
+        ImageUrl = imageUrl;
+        Manufacturer = manufacturer;
     }
 }

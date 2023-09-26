@@ -13,10 +13,15 @@ namespace Lesson02_Startup.Controllers
         public ActionResult Index()
         {
             // create a new product object with instance name glass
-            Product glass = new Product("Wine glass", 160.50);
-            glass.ImageUrl = "grandcru.jpg";
+            Product glass = new Product("Wine glass", 160.50, "grandcru.jpg", "Bilka");
             ViewBag.Glass = glass;
-			
+
+            Product knife = new Product("Knife", 50.50, "st_knife.jpg", "Lidl");
+            ViewBag.Knife = knife;
+
+            Product bin = new Product("Bin", 10.69, "bin_35l.jpg", "Ikea");
+            ViewBag.Bin = bin;
+
             return View();
         }
 
