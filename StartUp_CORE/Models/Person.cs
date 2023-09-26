@@ -11,7 +11,7 @@
             }
             set 
             { 
-                Firstname = value; 
+                firstName = value; 
             }
         }
 
@@ -24,7 +24,7 @@
             }
             set 
             { 
-                Lastname = value; 
+                lastName = value; 
             }
         }
 
@@ -64,26 +64,59 @@
                 city = value;
             }
         }
-        private string telephone;
-        public string Telephone
+        private List<String> phoneNumbers = new List<String>();
+        public List<string> PhoneNumbers
         {
             get
             {
-                return telephone;
-            }
-            set
-            {
-                telephone = value;
+                return phoneNumbers;
             }
         }
-        public Person(string firstname, string lastname, string address, string zip, string city, string telephone)
+        public void addPhone(string phone)
+        {
+            phoneNumbers.Add(phone);
+        }
+
+        private DateTime birthday;
+
+        public DateTime Birthday
+        {
+            get 
+            {
+                return birthday;
+            }
+            set 
+            {
+                DateTime now = DateTime.Now;
+                if (value.Day > now.Day || (value.Year - now.Year > 120))
+                {
+                    throw new Exception("Age to big or too small");
+                } else
+                {
+                    birthday = value;
+                }
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                DateTime now = DateTime.Now;
+                int age = now.Year - birthday.Year;
+                if (now.Month < birthday.Month || (now.Month == birthday.Month && now.Day < birthday.Day))
+                {
+                    age--;
+                }
+                return age;
+            }
+        }
+        public Person(string firstname, string lastname, string address, string zip, string city)
         {
             Firstname = firstname;
             Lastname = lastname;
             Address = address;
             Zip = zip;
             City = city;
-            Telephone = telephone;
         }
     }
 }
