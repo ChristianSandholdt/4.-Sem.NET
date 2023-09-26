@@ -11,7 +11,7 @@ namespace StartUp_CORE.Controllers
             Person p2 = new Person("Virgil", "Van Dijk", "Defence av.", "1234", "Liverpool", "86896598");
             ViewBag.P1 = p1;
             ViewBag.P2 = p2;
-            return View();
+            return View("Exercise02");
         }
     }
 }
