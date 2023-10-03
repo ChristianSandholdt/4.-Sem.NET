@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"]="Countries";
+}
+
+
+@using (Html.BeginForm("Countries", "Home" ,FormMethod.Get))
+{
+    @Html.DropDownList("Country", new SelectList(ViewBag.Countries, "Value", "Text"),"Select Country");
+    <br>
+    <input type="submit" value="Show country code"/>
+    <br>
+    @if (!string.IsNullOrEmpty(ViewBag.CountryCode))
+    {
+        <strong>Country code</strong> @ViewBag.CountryCode
+    }
+}
+
+@using (Html.BeginForm("Countries", "Home", FormMethod.Post))
+{
+    @Html.TextBox("CName") <br>
+    @Html.TextBox("CCode") <br>
+    <input type="submit" value="Add">
+
+}
+
