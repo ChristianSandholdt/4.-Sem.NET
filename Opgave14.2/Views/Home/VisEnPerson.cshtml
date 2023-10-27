@@ -1,0 +1,5 @@
+﻿@model Person
+@{
+    //@await Html.PartialAsync("_Vis",Model)
+    @await Component.InvokeAsync("VisVC", Model);
+}
