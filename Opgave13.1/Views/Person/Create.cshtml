@@ -1,0 +1,23 @@
+﻿@model Person
+@{
+
+}
+
+@* @using (Html.BeginForm("PersonCreatedCollection", "Person", FormMethod.Post))
+{
+    <h2>Create person1</h2>
+    @Html.TextBox("fornavn") <br>
+    @Html.TextBox("efternavn") <br>
+    @Html.TextBox("alder") <br>
+
+    <input type="submit" value="Opret person">
+} *@
+
+<form asp-action="PersonCreated">
+    <h2>Create person1</h2>
+    @Html.TextBox("fornavn") <br>
+    @Html.TextBox("efternavn") <br>
+    @Html.TextBox("alder") <br>
+
+    <input type="submit" value="Opret person">
+</form>

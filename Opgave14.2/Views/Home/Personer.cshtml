@@ -1,0 +1,8 @@
+﻿@model List<Person>
+@{
+    @foreach (Person p in @Model)
+    {
+        //@await Html.PartialAsync("_Vis",p)
+        @await Component.InvokeAsync("VisVC", p)
+    } 
+}
