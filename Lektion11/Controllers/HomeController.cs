@@ -1,13 +1,16 @@
 ﻿using Lektion11.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Web;
 
 namespace Lektion11.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHttpContextAccessor _contextAccessor;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -22,8 +25,7 @@ namespace Lektion11.Controllers
         {
             return View();
         }
-        public List<SelectListItem> CountriesList = new List<SelectListItem>();
-
+        private List<SelectListItem> CountriesList = new List<SelectListItem>();
         public IActionResult Countries(string Country)
         {
             CountriesList.Add(new SelectListItem { Text = "China", Value = "CN" });
@@ -31,9 +33,8 @@ namespace Lektion11.Controllers
             CountriesList.Add(new SelectListItem { Text = "United Kingdom", Value = "UK" });
             CountriesList.Add(new SelectListItem { Text = "United States of America", Value = "US" });
             CountriesList.Add(new SelectListItem { Text = "France", Value = "FR" });
-            ViewBag.Countries = CountriesList;
 
-            
+            ViewBag.Countries = CountriesList;    
             ViewBag.CountryCode = Country;
 
            
@@ -49,9 +50,10 @@ namespace Lektion11.Controllers
             if (countryName != null && countryCode != null)
             {
                 SelectListItem c = new SelectListItem { Text = countryName, Value = countryCode };
-                CountriesList.Add(c);
-                ViewBag.Countries = CountriesList;
+                CountriesList.Add(new SelectListItem { Text = countryName, Value = countryCode});
+                Countries(c.Text);
             }
+            ViewBag.Countries = CountriesList;
             return View();
         }
 

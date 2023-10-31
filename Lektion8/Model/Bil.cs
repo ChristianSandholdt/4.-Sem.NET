@@ -2,6 +2,7 @@
 using Opgave8_1.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,52 @@ using System.Threading.Tasks;
 namespace Lektion8
 {
     [Table("biler")]
-    public class Bil
+    public class Bil : INotifyPropertyChanged
     {
-        public int BilID { get; set; }
-        public string Color { get; set; }
-        public string Plate { get; set; }
+{
+        public event PropertyChangedEventHandler? PropertyChanged;
+    
+
+    public int BilID { get; set; }
+        public string Color { 
+            set {
+                Color = value;
+                notifyPropertyChanged("Color");
+            }
+            get { return Color; }
+        }
+        public string Plate { 
+            set {
+                Plate = value;
+                notifyPropertyChanged("Plate");
+            } 
+            get { return Plate; } 
+        }
+
+        public string Manufacturer
+        {
+            set
+            {
+                Plate = value;
+                notifyPropertyChanged("Plate");
+            }
+            get { return Plate; }
+        }
+
+
         public string Manufacturer { get; set; }
         public int Age { get; set; }
 
         public virtual Ejer? Ejer { get; set; }
 
         public int EjerID { get; set; }
-
+        private void notifyPropertyChanged(String propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         internal Bil(string color, string plate, string manufacturer,int ejerID)
         {
