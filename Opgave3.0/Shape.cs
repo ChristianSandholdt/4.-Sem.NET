@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Opgave3
+namespace Opgave3._0
 {
     internal abstract class Shape
     {
@@ -14,16 +14,16 @@ namespace Opgave3
 
         public Shape(double x, double y)
         {
-            this.X = x;
-            this.Y = y;
+            X = x;
+            Y = y;
         }
 
-        public Shape() : this(1, 1) 
+        public Shape() : this(1, 1)
         {
         }
 
         public abstract double area();
-        
+
 
 
     }

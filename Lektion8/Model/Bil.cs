@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Opgave8_1.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,29 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lektion8
+namespace Opgave8_1.Model
 {
     [Table("biler")]
     public class Bil : INotifyPropertyChanged
     {
 {
         public event PropertyChangedEventHandler? PropertyChanged;
-    
 
-    public int BilID { get; set; }
-        public string Color { 
-            set {
+
+        public int BilID { get; set; }
+        public string Color
+        {
+            set
+            {
                 Color = value;
                 notifyPropertyChanged("Color");
             }
             get { return Color; }
         }
-        public string Plate { 
-            set {
+        public string Plate
+        {
+            set
+            {
                 Plate = value;
                 notifyPropertyChanged("Plate");
-            } 
-            get { return Plate; } 
+            }
+            get { return Plate; }
         }
 
         public string Manufacturer
@@ -50,7 +53,7 @@ namespace Lektion8
         public virtual Ejer? Ejer { get; set; }
 
         public int EjerID { get; set; }
-        private void notifyPropertyChanged(String propertyName)
+        private void notifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
@@ -58,7 +61,7 @@ namespace Lektion8
             }
         }
 
-        internal Bil(string color, string plate, string manufacturer,int ejerID)
+        internal Bil(string color, string plate, string manufacturer, int ejerID)
         {
             Color = color;
             Plate = plate;
@@ -68,7 +71,7 @@ namespace Lektion8
         }
 
         public Bil()
-        { 
+        {
         }
 
         public Bil(string color, string plate, string manufacturer)

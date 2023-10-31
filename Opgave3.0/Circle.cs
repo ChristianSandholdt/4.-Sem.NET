@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Opgave3
+namespace Opgave3._0
 {
     internal class Circle : Shape
     {
         public int Radius { get; set; }
-        public Circle(int x, int y, int radius) : base( x,  y){
-            this.Radius = radius;
+        public Circle(int x, int y, int radius) : base(x, y)
+        {
+            Radius = radius;
         }
 
 
-        public String toString()
+        public string toString()
         {
-            return "X: " + this.X + " Y:" + this.X + "values for the circle";
+            return "X: " + X + " Y:" + X + "values for the circle";
         }
 
         public override double area()
         {
-            return Math.PI*(this.Radius*this.Radius);
+            return Math.PI * (Radius * Radius);
         }
     }
 

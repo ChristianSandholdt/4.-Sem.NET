@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Lesson02_Startup.Controllers
+namespace StartUp_CORE.Controllers
 {
     public class Exercise01Controller : Controller
     {
-        
+
 
         public ActionResult Index()
         {

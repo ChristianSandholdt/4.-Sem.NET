@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Opgave8_1.Model;
 
-namespace Lektion8.Context
+namespace Opgave8_1.Context
 {
     class BilContext : DbContext
     {
@@ -25,11 +25,11 @@ namespace Lektion8.Context
             Ejer ejer2 = new Ejer { EjerID = -2, Name = "Nehtin" };
             Ejer ejer3 = new Ejer { EjerID = -3, Name = "Salah" };
 
-            Bil bil1 = new Bil { EjerID = -1, BilID = -1 , Color = "Red", Manufacturer = "Volvo", Plate = "BZ42056"};
+            Bil bil1 = new Bil { EjerID = -1, BilID = -1, Color = "Red", Manufacturer = "Volvo", Plate = "BZ42056" };
             Bil bil2 = new Bil { EjerID = -2, BilID = -2, Color = "Green", Manufacturer = "Audi", Plate = "FG64254" };
 
-            Hus hus1 = new Hus { EjerID = -1, HusID= -5, Adresse = "Skovmårvej 20" };
-            Hus hus2 = new Hus { EjerID = -2, HusID= -6,Adresse = "Mejløvænget 39" };
+            Hus hus1 = new Hus { EjerID = -1, HusID = -5, Adresse = "Skovmårvej 20" };
+            Hus hus2 = new Hus { EjerID = -2, HusID = -6, Adresse = "Mejløvænget 39" };
             hus2.Ejere.Add(ejer3);
             hus1.Ejere.Add(ejer3);
 

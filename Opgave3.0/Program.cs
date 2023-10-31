@@ -1,5 +1,6 @@
 ﻿
 using Opgave3;
+using Opgave3._0;
 
 Shape s1 = new Rectangle(1, 1, 4, 7);
 Shape s2 = new Circle(5, 5, 5);
