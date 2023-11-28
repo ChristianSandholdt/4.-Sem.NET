@@ -13,6 +13,7 @@ namespace OpgaveLek14
         static void Main(string[] args)
         {
             DB = new eksempeldbEntities1();
+            //Linq 1
             //insertPerson();
             //deletePerson();
             //updatePerson();
@@ -20,24 +21,134 @@ namespace OpgaveLek14
             //printPeopleDetailed();
             //changePostalNumberUno();
             //changePostalNumberDos();
-            changePostalNumberTres();
+            //changePostalNumberTres();
+            //Console.ReadLine();
+
+            //Linq 2
+            //findPersonFromSalary();
+            //findPersonFromSalaryArray();
+            //hirePersonToCompany();
+            //findEmployedPeople();
+            //CompaniesInPostNr();
+            //AvgLoenPrStilling();
+            findpplfunc();
+            
+        }
+
+
+        //Linq 2
+        public static void findPersonFromSalary()
+        {
+            Console.WriteLine("Enter salary...");
+            int salary = Convert.ToInt32(Console.ReadLine());
+            var pers = (from p in DB.people where p.loen > salary select p);
+            foreach (var item in pers)
+            {
+                Console.WriteLine(item.navn + " " + item.loen);
+            }
             Console.ReadLine();
         }
+
+        public static void findPersonFromSalaryArray()
+        {
+            Console.WriteLine("Enter salary...");
+            int salary = Convert.ToInt32(Console.ReadLine());
+            person[] pers = (from p in DB.people
+                             where p.loen > salary
+                             select p).ToArray();
+            foreach (var item in pers)
+            {
+                Console.WriteLine(item.navn + " " + item.loen);
+            }
+            Console.ReadLine();
+        }
+
+        public static void findEmployedPeople()
+        {
+            var employedPeople = from p in DB.people
+                                 from f in p.firmas
+                                 select new { p.navn, f.firmanavn};
+            foreach (var item in employedPeople)
+            {
+                Console.WriteLine(item.navn + " " + item.firmanavn);
+            }
+            Console.ReadLine();
+        }
+
+
+        public static void hirePersonToCompany()
+        {
+            Console.WriteLine("Enter cpr of person to hire...");
+            string cpr = Console.ReadLine();
+            Console.WriteLine("Enter firmanr of company to hire person in");
+            int firmanr = Convert.ToInt32(Console.ReadLine());
+            var person = (from p in DB.people
+                          where p.cpr == cpr
+                          select p).First();
+            var firma = (from f in DB.firmas
+                         where f.firmanr == firmanr
+                         select f).First();
+            person.firmas.Add(firma);
+            DB.SaveChanges();
+        }
+
+        public static void CompaniesInPostNr()
+        {
+            var postnummer = (from pn in DB.postnummers
+                              where pn.firmas.Count > 0
+                              select pn);
+
+            foreach (var item in postnummer)
+            {
+                Console.WriteLine(item.postnr + " " + item.firmas.Count());
+            }
+            Console.ReadLine();
+        }
+
+        public static void AvgLoenPrStilling()
+        {
+            var loen = (from p in DB.people
+                        group p by p.stilling into still
+                        select new { still.Key, Average = still.Average(p => p.loen) });
+
+            foreach (var item in loen)
+            {
+                Console.WriteLine(item.Key + " " + item.Average);
+            }
+            Console.ReadLine();
+        }
+
+        public static void findpplfunc()
+        {
+            person[] pers = DB.findppl1().ToArray();
+            foreach (var item in pers)
+            {
+                Console.WriteLine(item.navn);
+            }
+            Console.ReadLine();
+        }
+
+
+
+
+        //Linq 1
 
 
         // Opgave 1
         public static void insertPerson()
         {
             person p = new person();
-            p.cpr = "2020202020";
-            p.loen = 200000;
-            p.navn = "James";
+            p.cpr = "2121212121";
+            p.loen = 100000;
+            p.navn = "Thiago";
             p.postnr = "8000";
             p.stilling = "Midfielder";
             DB.people.Add(p);
             DB.SaveChanges();
             Console.ReadLine();
         }
+
+
         public static void deletePerson()
         {
             DB.people.Remove((from p in DB.people

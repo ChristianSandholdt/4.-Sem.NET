@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="eksempeldbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="eksempeldbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ansati">
           <Key>
             <PropertyRef Name="cpr" />
@@ -87,6 +87,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="findppl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="eksempeldbModelStoreContainer">
           <EntitySet Name="ansati" EntityType="Self.ansati" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="firma" EntityType="Self.firma" Schema="dbo" store:Type="Tables" />
@@ -109,8 +110,7 @@
             <End Role="person" EntitySet="person" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="eksempeldbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -190,7 +190,17 @@
             <End Role="person" EntitySet="people" />
             <End Role="firma" EntitySet="firmas" />
           </AssociationSet>
+          <FunctionImport Name="findppl" ReturnType="Collection(eksempeldbModel.findppl_Result)" />
+          <FunctionImport Name="findppl1" EntitySet="people" ReturnType="Collection(eksempeldbModel.person)" />
         </EntityContainer>
+        <ComplexType Name="findppl_Result">
+          <Property Type="String" Name="cpr" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="navn" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="stilling" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="loen" Nullable="false" />
+          <Property Type="String" Name="postnr" Nullable="false" MaxLength="4" />
+          <Property Type="Binary" Name="changed" Nullable="false" MaxLength="8" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -234,6 +244,19 @@
               <ScalarProperty Name="firmanr" ColumnName="firmanr" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="findppl" FunctionName="eksempeldbModel.Store.findppl">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="eksempeldbModel.findppl_Result">
+                <ScalarProperty Name="cpr" ColumnName="cpr" />
+                <ScalarProperty Name="navn" ColumnName="navn" />
+                <ScalarProperty Name="stilling" ColumnName="stilling" />
+                <ScalarProperty Name="loen" ColumnName="loen" />
+                <ScalarProperty Name="postnr" ColumnName="postnr" />
+                <ScalarProperty Name="changed" ColumnName="changed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="findppl1" FunctionName="eksempeldbModel.Store.findppl" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

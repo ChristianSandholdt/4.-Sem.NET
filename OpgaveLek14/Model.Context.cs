@@ -12,6 +12,8 @@ namespace OpgaveLek14
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class eksempeldbEntities1 : DbContext
     {
@@ -28,5 +30,20 @@ namespace OpgaveLek14
         public virtual DbSet<firma> firmas { get; set; }
         public virtual DbSet<person> people { get; set; }
         public virtual DbSet<postnummer> postnummers { get; set; }
+    
+        public virtual ObjectResult<findppl_Result> findppl()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<findppl_Result>("findppl");
+        }
+    
+        public virtual ObjectResult<person> findppl1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<person>("findppl1");
+        }
+    
+        public virtual ObjectResult<person> findppl1(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<person>("findppl1", mergeOption);
+        }
     }
 }

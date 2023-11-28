@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6da56a76ae9a4e97ad42e8dd66e2eae0" Name="Diagram1">
+        <EntityTypeShape EntityType="linqDataBaseModel.booking" Width="1.5" PointX="8" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.car" Width="1.5" PointX="5.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.country" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.customer" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.invoice" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.product" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.rentcustomer" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="linqDataBaseModel.supplier" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="linqDataBaseModel.FK__booking__carno__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="linqDataBaseModel.FK__booking__custome__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="linqDataBaseModel.FK__supplier__countr__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="linqDataBaseModel.FK__invoice__custome__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="linqDataBaseModel.FK__product__supplie__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="linqDataBaseModel.sale" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
